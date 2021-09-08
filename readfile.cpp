@@ -3,7 +3,7 @@
 
 using namespace std;
 
-struct Student {
+struct Student { //create struct to define the data
   int id;
   string sname;
   double score[2];
@@ -17,7 +17,7 @@ int main()
 	Student s[10];
 	ifs.open("students.txt");
 
-	for( int i=0;i<10; i++)
+	for( int i=0;i<10; i++) //reads each line in the file
 	{
 		ifs >> s[i].id;
 		ifs >> s[i].sname;
@@ -27,7 +27,7 @@ int main()
 		s[i].avg = s[i].sum / 2;
 	}
 
-	for( int i=0;i<10; i++)
+	for( int i=0;i<10; i++) //outputs each line in the file to the console
 	{
 		cout << s[i].id << "\t" ;
 		cout << s[i].sname << "\t";
