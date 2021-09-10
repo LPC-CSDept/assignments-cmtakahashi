@@ -27,7 +27,7 @@ int main()
 
 int binarySearch(int numbers[], int N, int target)
 {
-	int first, last, mid;
+int first, last, mid;
   bool found = false;
   first = 0;
   last = N-1;
@@ -52,6 +52,7 @@ int binarySearch(int numbers[], int N, int target)
       }
      
   }
+  
   if (!found)
 	  return -1;  
 }
