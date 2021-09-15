@@ -11,10 +11,12 @@ int main()
   
   for (int i = 0; i < N-1; i++)
   {
-      if (numbers[i] > numbers[i+1])
+    for (int j=0; j < N-1; j++) { 
+      if (numbers[j] > numbers[j+1])
       {
-        swap(numbers[i], numbers[i+1]);
+        swap(numbers[j], numbers[j+1]);
       }
+    }
 
   }
   printArray(numbers, N);
