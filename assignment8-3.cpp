@@ -15,7 +15,7 @@ int main()
 	for(int i=0;i<N-1;i++)
     {
         minidx= findMin(numbers, N, i); // Find the i_th smallest number
-		swap(numbers[i], numbers[minidx]);
+		swap(numbers[i], numbers[minidx]); // swaps the current number with the returned minimum value within the next iteration's scope
 	}
 
 	printArray(numbers, N);
@@ -25,7 +25,7 @@ int main()
 int findMin(int numbers[], int N, int ith)
 {
 	int min, minidx, i;
-	min = numbers[ith];
+	min = numbers[ith]; // initializes the variable min to the array value at the ith position
     for(i=ith ;i<N;i++)
 	{
 		if ( min > numbers[i] )
@@ -34,12 +34,12 @@ int findMin(int numbers[], int N, int ith)
 			minidx = i;
 		}
 	}
-	return minidx; // 1
+	return minidx; // returns the index
 }
 
 void printArray(int a[], int x)
 {
-	for(int i = 0; i < x; i++){
+	for(int i = 0; i < x; i++){  //loops through all elements, printing them in order
     cout << a[i] << "\t";
   }
   cout << "\n";
