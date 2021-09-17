@@ -26,6 +26,8 @@ int findMin(int numbers[], int N, int ith)
 {
 	int min, minidx, i;
 	min = numbers[ith]; // initializes the variable min to the array value at the ith position
+	// minidx should be set to ith value
+	// because if the condition of line 33 would not be satisfied, the uninitialized minidx may be returned at line 39.
     for(i=ith ;i<N;i++)
 	{
 		if ( min > numbers[i] )
