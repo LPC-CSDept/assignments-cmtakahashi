@@ -40,7 +40,7 @@ int first, last, mid;
       if (numbers[mid] == target){
         found = true;
         return mid;
-        break;
+        break;  // this line is unreachable. Because line 42 is the return statement.
       }
 
       else if (numbers[mid] < target) {
