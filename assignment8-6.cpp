@@ -13,7 +13,7 @@ struct Students {
 
 void printStudents(Students [], int);
 void makeStudents(Students [], int);
-void sortStudetns(Students [], int );
+void sortStudents(Students [], int );
 int binarySearch(Students [], int , int );
 
 int main()
@@ -26,7 +26,7 @@ int main()
 
 
 	// 1) Sort by ID
-	sortStudetns(s, N);
+	sortStudents(s, N);
 	printStudents(s, N); 
 	// 2) Search the certain student information by the ID (or any other fields)
 	// binary search
@@ -37,10 +37,10 @@ int main()
 	if ( result)
 	{
 		cout << "The student information: \n";
-    cout << "ID: " << s[result].sid << endl;
-    cout << "Name: " << s[result].sname << endl;
-    for(int j=0;j<NUM_SCORES; j++)
-      cout << "Score " << j+1 << ": " << s[result].scores[j] << endl;
+        cout << "ID: " << s[result].sid << endl;
+        cout << "Name: " << s[result].sname << endl;
+        for(int j=0;j<NUM_SCORES; j++)
+            cout << "Score " << j+1 << ": " << s[result].scores[j] << endl;
 	}
 		cout << "Array Index: " <<  result << endl;
 }
@@ -48,7 +48,7 @@ int main()
 
 
 
-void sortStudetns(Students s[], int N)
+void sortStudents(Students s[], int N)
 {
 	for(int i=0; i<N; i++)
 	{
