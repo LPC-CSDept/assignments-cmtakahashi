@@ -17,7 +17,7 @@ int main()
 	int target;
 	int total_linear = 0;
 
-	srand(time(0)); // set the seed number to random value
+	srand(time(0)); // sets the seed number to random value
 	makeArray(array, N);
 	printArray(array, N);
 
@@ -25,13 +25,16 @@ int main()
 		target = array[rand() % 64];
 		total_linear += linearSearch(array, N, target);
 	}
-	cout << "The average comparison number " << total_linear / TRY << endl;
+	cout << "The average comparison number for linear " << total_linear / TRY << endl;
 
 	// Sort array
+    // selectSort (array, N)
 
-	// call binarySearch TRY times
-
-
+	for(int i=0; i<TRY; i++){
+		target = array[rand() % 64];
+		total_linear += binarySearch(array, N, target);
+	}
+  	cout << "The average comparison number for binary " << total_linear / TRY << endl;
 
 }
 
