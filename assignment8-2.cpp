@@ -24,18 +24,21 @@ int main()
 
 	srand(time(0)); // sets the seed number to random value
 	makeArray(array, N);
+    cout << "\nCurrent Array Values: \n";
+    cout << "-------------------------------------------\n";
 	printArray(array, N);
 
 	for(int i=0; i<TRY; i++){
 		target = array[rand() % N];
 		total_linear += linearSearch(array, N, target);
 	}
-	cout << "The average comparison number for linear search: " << total_linear / TRY << endl;
+	cout << "The average comparison number for linear search: " << total_linear / TRY << endl << endl;
 
 	// Sort array
     sortArray(array, N);
 
-
+    cout << "\nSorting the array...\n";
+    cout << "-------------------------------------------\n";
     printArray(array, N);
 
 	for(int i=0; i<TRY; i++){
