@@ -8,6 +8,9 @@ void makeArray(int [], int);
 void printArray(int [], int);
 int linearSearch(int [], int , int );
 int binarySearch(int [], int , int );
+int findMin(int [], int, int);
+void sortArray (int [], int );
+
 
 int main()
 {
@@ -16,8 +19,10 @@ int main()
 	int array[N];
 	int target;
 	int total_linear = 0;
+  int total_binary = 0;
+  //int minidx;
 
-	srand(time(0)); // sets the seed number to random value
+	srand(time(0)); // set the seed number to random value
 	makeArray(array, N);
 	printArray(array, N);
 
@@ -25,16 +30,19 @@ int main()
 		target = array[rand() % 64];
 		total_linear += linearSearch(array, N, target);
 	}
-	cout << "The average comparison number for linear " << total_linear / TRY << endl;
+	cout << "The average comparison number for linear search: " << total_linear / TRY << endl;
 
 	// Sort array
-    // selectSort (array, N)
+  sortArray(array, N);
+
+
+  printArray(array, N);
 
 	for(int i=0; i<TRY; i++){
 		target = array[rand() % 64];
-		total_linear += binarySearch(array, N, target);
+		total_binary += binarySearch(array, N, target);
 	}
-  	cout << "The average comparison number for binary " << total_linear / TRY << endl;
+  	cout << "The average comparison number for binary search: " << total_binary / TRY << endl;
 
 }
 
@@ -83,4 +91,32 @@ int binarySearch(int array[], int N, int target)
             first = mid + 1;
     }
     return cmp;
+}
+
+
+void sortArray (int array [], int N)
+{
+  int minidx;
+  for(int i=0;i<N-1;i++)
+  {
+      minidx= findMin(array, N, i); // Find the i_th smallest number
+  swap(array[i], array[minidx]); // swaps the current number with the returned minimum value within the next iteration's scope
+  }
+
+}
+
+int findMin(int array[], int N, int ith)
+{
+	int min, minidx = ith, i;
+	min = array[ith]; // initializes the variable min to the array value at the ith position
+    for(i=ith ;i<N;i++)
+	{
+		if ( min > array[i] )
+		{
+			min = array[i];
+			minidx = i;
+		}
+	}
+	return minidx; // returns the index
+
 }
