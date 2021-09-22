@@ -19,8 +19,8 @@ int main()
 	int array[N];
 	int target;
 	int total_linear = 0;
-  int total_binary = 0;
-  //int minidx;
+    int total_binary = 0;
+    //int minidx;
 
 	srand(time(0)); // set the seed number to random value
 	makeArray(array, N);
@@ -33,10 +33,9 @@ int main()
 	cout << "The average comparison number for linear search: " << total_linear / TRY << endl;
 
 	// Sort array
-  sortArray(array, N);
+    sortArray(array, N);
 
-
-  printArray(array, N);
+    printArray(array, N);
 
 	for(int i=0; i<TRY; i++){
 		target = array[rand() % 64];
