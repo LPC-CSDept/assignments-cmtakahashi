@@ -65,7 +65,7 @@ void sortStudents(Students s[], int N)
 void makeStudents(Students s[], int N)
 {
 	ifstream ifs;
-	ifs.open("students.txt");
+	ifs.open("students86.txt");
 
 	if ( ifs.fail()){
 		cout << "File not foudn\n";
