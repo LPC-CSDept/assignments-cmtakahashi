@@ -22,27 +22,37 @@ int main()
 	Students s[N];
 
 	makeStudents(s, N); // To read the student information from the file
+	cout << "\n";
+	cout << "Initial File Contents: \n";
+	cout << "---------------------------------\n";
 	printStudents(s, N); 
 
 
 	// 1) Sort by ID
 	sortStudents(s, N);
+	cout << "Students Sorted by ID: \n";
+	cout << "---------------------------------\n";
 	printStudents(s, N); 
 	// 2) Search the certain student information by the ID (or any other fields)
 	// binary search
 
-	int target = 10009999;
+	int target = 10005566;
 
 	int result = binarySearch(s, N, target);
-	if ( result)
+	if (result!= -1)
 	{
-		cout << "The student information: \n";
+		cout << "The first student found with ID: " << target << "\n";
         cout << "ID: " << s[result].sid << endl;
         cout << "Name: " << s[result].sname << endl;
         for(int j=0;j<NUM_SCORES; j++)
+		{
             cout << "Score " << j+1 << ": " << s[result].scores[j] << endl;
+		}
+		cout << "Array Index: " <<  result << endl << endl;
 	}
-		cout << "Array Index: " <<  result << endl;
+		
+	else	
+		cout << "No student found with ID " << target << endl << endl;
 }
 
 
@@ -89,7 +99,7 @@ void printStudents(Students s[], int N)
 			cout <<  s[i].scores[j] << "\t";
 		cout << endl;
 	}
-	cout << "==== End of Record === \n";
+	cout << "==== End of Record === \n\n";
 }
 
 
