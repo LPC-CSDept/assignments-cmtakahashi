@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 int main()
@@ -17,7 +19,7 @@ int main()
   // cout << "The address of the first element is: " << ptr << endl; //ptr is set to num, which is the equivalent of num[0]
   // cout << "The address of the first element is: " << &num[0] << endl; // print num[0] to confirm the address is the same
 
-    
+  cout << fixed << setprecision(1); //allow print to keep the floating zero
   for (int i =0; i < N; i++)
   // to denote the ith element, (ptr + i )
   // to denote the value at the ith element *(ptr + i)

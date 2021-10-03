@@ -1,4 +1,6 @@
- #include <iostream>
+#include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 void printArray(double * const, int );
@@ -13,7 +15,9 @@ int main()
 		// 2) This pointer ( array nanme) can not be assigned with other address values
 		// 	    int i;  num = &i; // error
 		// Array name points to the address of the first element.
-		
+
+	cout << fixed << setprecision(1); //allow print to keep the floating zero
+	
 	printArray(numbers, N);
 
 }
