@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
-using namespace std;
+// using namespace std;
 
 double *makeNumbers(int N);
 void printNumbers(double * const ptr, int N);
@@ -17,12 +17,12 @@ int main()
     double 	*ptr=nullptr;
 
     ptr = makeNumbers(N);
-    cout << "\nInitial Double Values: \n";
-    cout << "-------------------------\n";
+    std::cout << "\nInitial Double Values: \n";
+    std::cout << "-------------------------\n";
     printNumbers(ptr, N);
     sortNumbers(ptr, N);
-    cout << "\nSorted Double Values: \n";
-    cout << "-------------------------\n";
+    std::cout << "\nSorted Double Values: \n";
+    std::cout << "-------------------------\n";
     printNumbers(ptr, N);
     deleteNumbers(ptr);
 }
@@ -40,7 +40,7 @@ double *makeNumbers(int N)
 void printNumbers(double * const ptr, int N)
 {
     for(int i=0; i<N; i++){
-        cout << fixed << setprecision(2) << *(ptr+i) << endl;
+        std::cout << std::fixed << std::setprecision(2) << *(ptr+i) << std::endl;
     }	
 
 }
@@ -49,7 +49,7 @@ void sortNumbers(double * const ptr, int N)
     for(int i = 0; i < N-1; i++){
         for(int j = 0; j < N-1; j++){
             if(ptr[j] > ptr[j + 1]){
-                swap(ptr[j],ptr[j + 1]);
+                std::swap(ptr[j],ptr[j + 1]);
             }
         } 
     }
