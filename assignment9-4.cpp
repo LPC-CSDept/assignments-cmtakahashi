@@ -50,7 +50,7 @@ Students *makeStudents(int N)
   for (int i = 0; i < N; i++)
   {
     ifs >> (ptr+i)->sid >> (ptr+i)->sname; // saves the line of txt file to id/name
-    for (int j = 0; j < NUM_SCORES; j++) //
+    for (int j = 0; j < NUM_SCORES; j++) // prints all scores in a loop
       ifs >> (ptr+i)->scores[j];
     
   }
@@ -79,15 +79,6 @@ void sortStudents(Students *const ptr, int N)
     {
       int sum1 = (ptr+j)->scores[0] + (ptr+j)->scores[1] + (ptr+j)->scores[2];
        int sum2 = (ptr+j+1)->scores[0] + (ptr+j+1)->scores[1] + (ptr+j+1)->scores[2];
-      /*
-      if (sum1 < sum2){
-        {
-          swap((ptr+j+1)->sid, (ptr+j)->sid);
-          swap((ptr+j+1)->sname, (ptr+j)->sname);
-          for (int k = 0; k < NUM_SCORES; k++) //
-              swap((ptr+j+1)->scores[k], (ptr+j)->scores[k]);
-        }
-      */
 
       if (sum1 > sum2){
         {
