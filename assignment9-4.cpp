@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cstring>
 
-using namespace std;
+// using namespace std; 
 
 const int MAX_LEN = 20;
 const int NUM_SCORES = 3;
@@ -24,12 +24,12 @@ int main()
   const int N = 10;
   Students *ptr=nullptr;
   ptr = makeStudents(N);
-  cout << "\nInital File Contents\n";
-  cout << "-----------------------------------------\n";
+  std::cout << "\nInital File Contents\n";
+  std::cout << "-----------------------------------------\n";
   printStudents(ptr, N);
   sortStudents(ptr, N);
-  cout << "\nStudents sorted by overall scores(asc):\n";
-  cout << "-----------------------------------------\n";
+  std::cout << "\nStudents sorted by overall scores(asc):\n";
+  std::cout << "-----------------------------------------\n";
 
   printStudents(ptr, N);
   
@@ -39,12 +39,12 @@ Students *makeStudents(int N)
 {
   Students *ptr = new Students [10];
 
-  ifstream ifs;
+  std::ifstream ifs;
 
   ifs.open("students94.txt");
   if (ifs.fail())
   {
-    cerr << "File open error \n";
+    std::cerr << "File open error \n";
     exit(0);
   }
   for (int i = 0; i < N; i++)
@@ -63,12 +63,12 @@ void printStudents(Students *const ptr, int N)
 {
   for (int i =0; i < N; i++)
   {
-  cout << (ptr+i)->sid << "\t" << (ptr+i)->sname << "\t";
+  std::cout << (ptr+i)->sid << "\t" << (ptr+i)->sname << "\t";
     for (int j = 0; j < NUM_SCORES; j++) //
-      cout << (ptr+i)->scores[j] << "\t";
-      cout << endl;
+      std::cout << (ptr+i)->scores[j] << "\t";
+      std::cout << std::endl;
   }
-  cout << "======== End of Record ========= \n";
+  std::cout << "======== End of Record ========= \n";
 }
 
 void sortStudents(Students *const ptr, int N)
@@ -91,10 +91,10 @@ void sortStudents(Students *const ptr, int N)
 
       if (sum1 > sum2){
         {
-          swap((ptr+j)->sid, (ptr+j+1)->sid);
-          swap((ptr+j)->sname, (ptr+j+1)->sname);
+          std::swap((ptr+j)->sid, (ptr+j+1)->sid);
+          std::swap((ptr+j)->sname, (ptr+j+1)->sname);
           for (int k = 0; k < NUM_SCORES; k++) //
-              swap((ptr+j)->scores[k], (ptr+j+1)->scores[k]);
+            std::swap((ptr+j)->scores[k], (ptr+j+1)->scores[k]);
 
         }
       
