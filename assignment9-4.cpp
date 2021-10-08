@@ -8,9 +8,9 @@ const int MAX_LEN = 20;
 const int NUM_SCORES = 3;
 
 struct Students {
-      int sid;
-      char sname[MAX_LEN];
-      double scores[NUM_SCORES];
+    int sid;
+    char sname[MAX_LEN];
+    double scores[NUM_SCORES];
 
 };
 
@@ -21,17 +21,17 @@ void sortStudents(Students * const, int);
 int main()
 {
 
-  const int N = 10;
-  Students *ptr=nullptr;
-  ptr = makeStudents(N);
-  std::cout << "\nInital File Contents\n";
-  std::cout << "-----------------------------------------\n";
-  printStudents(ptr, N);
-  sortStudents(ptr, N);
-  std::cout << "\nStudents sorted by overall scores(asc):\n";
-  std::cout << "-----------------------------------------\n";
+    const int N = 10;
+    Students *ptr=nullptr;
+    ptr = makeStudents(N);
+    std::cout << "\nInital File Contents\n";
+    std::cout << "-----------------------------------------\n";
+    printStudents(ptr, N);
+    sortStudents(ptr, N);
+    std::cout << "\nStudents sorted by overall scores(asc):\n";
+    std::cout << "-----------------------------------------\n";
 
-  printStudents(ptr, N);
+    printStudents(ptr, N);
   
 }
 
@@ -42,11 +42,11 @@ Students *makeStudents(int N)
     std::ifstream ifs;
 
     ifs.open("students94.txt");
-        if (ifs.fail())
-        {
-            std::cerr << "File open error \n";
-            exit(0);
-        }
+    if (ifs.fail())
+    {
+        std::cerr << "File open error \n";
+        exit(0);
+    }
     for (int i = 0; i < N; i++)
     {
         ifs >> (ptr+i)->sid >> (ptr+i)->sname; // saves the line of txt file to id/name
