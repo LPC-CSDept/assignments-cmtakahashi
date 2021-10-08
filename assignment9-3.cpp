@@ -13,18 +13,18 @@ void deleteNumbers(double * ptr);
 
 int main()
 {
-	const 	int N=10;
-	double 	*ptr=nullptr;
+    const 	int N=10;
+    double 	*ptr=nullptr;
 
-	ptr = makeNumbers(N);
-	cout << "\nInitial Double Values: \n";
+    ptr = makeNumbers(N);
+    cout << "\nInitial Double Values: \n";
     cout << "-------------------------\n";
-	printNumbers(ptr, N);
-	sortNumbers(ptr, N);
-	cout << "\nSorted Double Values: \n";
+    printNumbers(ptr, N);
+    sortNumbers(ptr, N);
+    cout << "\nSorted Double Values: \n";
     cout << "-------------------------\n";
-	printNumbers(ptr, N);
-	deleteNumbers(ptr);
+    printNumbers(ptr, N);
+    deleteNumbers(ptr);
 }
 
 
@@ -39,9 +39,9 @@ double *makeNumbers(int N)
 }
 void printNumbers(double * const ptr, int N)
 {
-	for(int i=0; i<N; i++){
-   	    cout << fixed << setprecision(2) << *(ptr+i) << endl;
-  }	
+    for(int i=0; i<N; i++){
+        cout << fixed << setprecision(2) << *(ptr+i) << endl;
+    }	
 
 }
 void sortNumbers(double * const ptr, int N)
@@ -57,5 +57,5 @@ void sortNumbers(double * const ptr, int N)
 
 void deleteNumbers(double * ptr)
 {
-  delete ptr;
+    delete ptr;
 }
