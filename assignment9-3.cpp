@@ -48,8 +48,8 @@ void sortNumbers(double * const ptr, int N)
 {
     for(int i = 0; i < N-1; i++){
         for(int j = 0; j < N-1; j++){
-            if(ptr[j] > ptr[j + 1]){
-                std::swap(ptr[j],ptr[j + 1]);
+            if (*(ptr+j) > *(ptr+j+1)){
+                std::swap (*(ptr+j),*(ptr+j+1));
             }
         } 
     }
