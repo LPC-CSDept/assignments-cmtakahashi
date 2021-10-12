@@ -82,11 +82,13 @@ void sortStudents(Students *const ptr, int N)
 
             if (sum1 > sum2){
                 {
+                    std::swap (*(ptr+j), *(ptr+j+1));   
+                    /*
                 std::swap((ptr+j)->sid, (ptr+j+1)->sid);
                 std::swap((ptr+j)->sname, (ptr+j+1)->sname);
                 for (int k = 0; k < NUM_SCORES; k++) //
                     std::swap((ptr+j)->scores[k], (ptr+j+1)->scores[k]);
-
+                */
                 }
         
             }
