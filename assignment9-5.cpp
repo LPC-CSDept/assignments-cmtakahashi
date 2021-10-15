@@ -5,6 +5,7 @@ int num;
 struct Node* next;
 };
 
+void printFormatting();
 void printNodes(Node *, Node *);
 
 int main()
@@ -14,11 +15,12 @@ int main()
     head = nullptr;
 
     int numNodes = 5;
+    std::cout << "We need " << numNodes << " numbers." << std::endl;
 
     for(int i=0; i<numNodes;i++)
     {
         new_node = new Node;
-        std::cout << "Enter your num : " ;
+        std::cout << "Please enter number " << i+1 << ": " ;
         std::cin >> new_node->num;
         new_node->next = nullptr;
 
@@ -53,19 +55,24 @@ int main()
             }
         }
     }
-
+    printFormatting();
     printNodes(ptr, head);
-
 
 }
 
+void printFormatting()
+{
+    std::cout << std::endl;
+    std::cout << "-----------------------" << std::endl;
+}
 
 void printNodes(Node *ptr, Node *head){
     ptr = head;
     int i = 1;
+    std::cout << "Here are your values: " << std::endl;
     while(ptr != nullptr)
     {
-        std::cout << "Node " << i++ << "'s value: " << ptr->num << std::endl;     
+        std::cout << "Node " << i++ << ": " << ptr->num << std::endl;     
         ptr = ptr->next;
     }   
 
