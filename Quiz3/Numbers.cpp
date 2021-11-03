@@ -32,6 +32,7 @@ using namespace std;
             max = numbers[i]; 
         }
     }
+    return max;
   }
 
   int Numbers::getMin() const{
@@ -42,6 +43,7 @@ using namespace std;
             min = numbers[i]; 
         }
     }
+    return min;
   }
 
   int Numbers::getSum() const{
