@@ -14,12 +14,16 @@ using namespace std;
   int Numbers::getSize() const{
       return numbers.size();
   }
-  int Numbers::getElm(int i) const;
+  int Numbers::getElm(int i) const{
+      return numbers[i];
+  }
   int Numbers::getMax() const;
   int Numbers::getMin() const;
   int Numbers::getSum() const;
   void Numbers::deleteElm(int d);
-  void Numbers::addElm(int a);
+  void Numbers::addElm(int a){
+      numbers.push_back(a);
+  }
   void Numbers::printAll() const{
       for(int i =0; i < numbers.size()-1; i++)
       {
