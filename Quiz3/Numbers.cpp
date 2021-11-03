@@ -6,8 +6,12 @@ using namespace std;
       ID = -1;
 
   }
-  Numbers:: Numbers(int, int);
-  Numbers::  ~Numbers();
+  Numbers:: Numbers(int groupID, int size ){
+      ID = groupID; 
+  }
+  Numbers::  ~Numbers(){
+
+  }
   int Numbers::getID() const{
       return ID;
   }
@@ -40,9 +44,23 @@ using namespace std;
     }
   }
 
+  int Numbers::getSum() const{
+      int sum = 0;
+      for (int i = 0; i < numbers.size() - 1; i++){
+          sum += numbers[i];
+      }
+      return sum;
+  }
+  void Numbers::deleteElm(int d){
+      vector <int>::iterator iter; 
+      for (iter = numbers.begin(); iter < numbers.end(); iter++)
+      {
+          if (*iter ==d){
+            numbers.erase(iter);
+          }
 
-  int Numbers::getSum() const;
-  void Numbers::deleteElm(int d);
+      }
+  }
   void Numbers::addElm(int a){
       numbers.push_back(a);
   }
