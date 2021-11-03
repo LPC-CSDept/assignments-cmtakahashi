@@ -1,11 +1,14 @@
 #include <cstdlib>
 #include <ctime>
+
 using namespace std;
 
 int findMax(Numbers[], int);
 void deDup(Numbers &, Numbers &);
 int main()
 {
+
+    /*
     const int N = 5;
     srand(time(0));
     Numbers numberset[] = {Numbers(1,3), Numbers(2,5), Numbers(3,10), Numbers(4,5), Numbers(5,7)};
@@ -26,4 +29,6 @@ int main()
     deDup(numberset[0], numberset[1]);
     cout << "ID 1 - ID 2\n";
     numberset[0].printAll();
+
+    */
 }
