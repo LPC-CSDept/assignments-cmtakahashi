@@ -2,15 +2,28 @@
 #include<iostream>
 using namespace std; 
 
-  Numbers();
-  Numbers(int, int);
-  ~Numbers();
-  int getID() const;
-  int getSize() const;
-  int getElm(int i) const;
-  int getMax() const;
-  int getMin() const;
-  int getSum() const;
-  void deleteElm(int d);
-  void addElm(int a);
-  void printAll() const;
+  Numbers:: Numbers(){
+      ID = -1;
+
+  }
+  Numbers:: Numbers(int, int);
+  Numbers::  ~Numbers();
+  int Numbers::getID() const{
+      return ID;
+  }
+  int Numbers::getSize() const{
+      return numbers.size();
+  }
+  int Numbers::getElm(int i) const;
+  int Numbers::getMax() const;
+  int Numbers::getMin() const;
+  int Numbers::getSum() const;
+  void Numbers::deleteElm(int d);
+  void Numbers::addElm(int a);
+  void Numbers::printAll() const{
+      for(int i =0; i < numbers.size()-1; i++)
+      {
+          cout << numbers[i] << "\t";
+      }
+      cout << endl;
+  }
