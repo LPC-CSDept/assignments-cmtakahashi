@@ -2,16 +2,20 @@
 #include<iostream>
 using namespace std; 
 
-  Numbers:: Numbers(){
+  Numbers::Numbers(){
       ID = -1;
 
   }
-  Numbers:: Numbers(int groupID, int size ){
+  Numbers::Numbers(int groupID, int size ){
       ID = groupID; 
+      for (int i =0; i < size; i++){
+          numbers.push_back((rand() % 99));
+      }
   }
-  Numbers::  ~Numbers(){
 
+  Numbers::~Numbers(){
   }
+
   int Numbers::getID() const{
       return ID;
   }
@@ -53,6 +57,7 @@ using namespace std;
       }
       return sum;
   }
+
   void Numbers::deleteElm(int d){
       vector <int>::iterator iter; 
       for (iter = numbers.begin(); iter < numbers.end(); iter++)
@@ -60,12 +65,13 @@ using namespace std;
           if (*iter ==d){
             numbers.erase(iter);
           }
-
       }
   }
+
   void Numbers::addElm(int a){
       numbers.push_back(a);
   }
+  
   void Numbers::printAll() const{
       for(int i =0; i < numbers.size()-1; i++)
       {

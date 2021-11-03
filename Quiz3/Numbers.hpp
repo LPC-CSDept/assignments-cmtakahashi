@@ -1,9 +1,8 @@
-#ifndef Numbers_H
-#define Numbers_H
+#ifndef NUMBERS_H
+#define NUMBERS_H
 #include <iostream>
 #include <vector>
-#include <cstdlib>
-#include <ctime>
+
 
 using namespace std;
 
@@ -28,4 +27,4 @@ class Numbers{
 
 };
 
-#endif
+#endif  /* NUMBERS_H */
