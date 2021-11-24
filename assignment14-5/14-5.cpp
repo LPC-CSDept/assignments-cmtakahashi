@@ -89,7 +89,6 @@ class Numbers{
 };
 
 void printNumbers(Numbers numberSet){
-    std::cout << "The numbers in your set are: ";
     for (int i =0; i < numberSet.getSize(); i++){
         std::cout << numberSet.numbers[i] << " ";
     }
@@ -115,7 +114,7 @@ int main(){
     }
     else 
         std::cout << "Neither set is bigger." << std:: endl;
-        
+
     Numbers n3=n1+n2;
     // is this correct? or the line above?    Numbers n3(n1+n2); 
     std::cout << "The numbers in the third set are: ";
