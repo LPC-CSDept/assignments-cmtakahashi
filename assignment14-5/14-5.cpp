@@ -110,9 +110,12 @@ int main(){
     if (n1 > n2){
        std::cout << "The bigger set is: n1" << std::endl;
     }
-    else
+    else if (n2 > n1){
         std::cout << "The bigger set is: n2" <<  std:: endl;
- 
+    }
+    else 
+        std::cout << "Neither set is bigger." << std:: endl;
+        
     Numbers n3=n1+n2;
     // is this correct? or the line above?    Numbers n3(n1+n2); 
     std::cout << "The numbers in the third set are: ";
