@@ -81,7 +81,6 @@ class Numbers{
             return newNums;
         };
         friend std::ostream &operator << (std::ostream & os, const Numbers &n){
-            os << n.size << std::endl;
             for (int i=0; i<n.size; i++){
                 os << n.numbers[i] << " ";
             }
@@ -123,7 +122,7 @@ int main(){
         std::cout << "The bigger set is: n2" <<  std:: endl;
 
     std::cout << "======================================================" << std::endl;
-    std::cout << "Here's what'sin the n1 set: " << std::endl;
+    std::cout << "Here's what's in the n1 set: " << std::endl;
     std::cout << n1 << std:: endl;
     std::cout << "Enter your values: ";
     std::cin >> n1;
