@@ -73,8 +73,38 @@ class Course{
         return NUM_COURSES;
     };
 
-    friend std::istream &operator >> (std::istream &is, Course &c);
-    friend std::ostream &operator << (std::ostream &os, Course &c);
+    friend std::istream &operator >> (std::istream &is, Course &c){
+        std::string cname;
+        int credits;
+        std::string semester;
+        is >> c.cname >> c.credits >> c.semester;
+
+        for (int i=0; i < c.student.size(); i++){
+            int id;
+            std::string s;
+            char g;
+            double sc;
+
+            is >> id >> s >> g >> sc;
+            c.student[i].setId(id);
+            c.student[i].setName(s);
+            c.student[i].setGrade(g);
+            c.student[i].setScores(sc);
+        }
+        return is;
+
+
+    };
+    friend std::ostream &operator << (std::ostream &os, Course &c){
+        os << "Course Name: " << c.cname << "\t" << "Credits: " << c.credits << "\t" << "Semester: " << c.semester << std::endl;
+        
+        os << "Student ID \t Credit \t Grade \t Score" << std::endl;
+        for (int i = 0; i < c.student.size(); i++){
+            os << c.student[i].getId() << "\t" << c.student[i].getName() << "\t" << c.student[i].getGrade() << "\t" << c.student[i].getScores() << std::endl;
+
+        }
+        return os;
+    };
 
     
 
