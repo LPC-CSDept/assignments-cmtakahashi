@@ -31,14 +31,18 @@ class Numbers{
         return NumofObjects;
     }
 
-   friend void printNumbers(Numbers n){
+   friend void printNumbers(Numbers n);
+
+
+
+};
+
+int Numbers::NumofObjects = 0;
+
+void printNumbers(Numbers n){
     cout << "The numbers in your set are: ";
     for (int i =0; i < n.values.size(); i++){
         cout << n.values[i] << " ";
     }
     cout << endl;
-    }
-
-
-
-};
+}
