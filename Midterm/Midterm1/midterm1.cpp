@@ -35,9 +35,25 @@ using namespace std;
 int main(){
     
     srand(time(0));
-    Numbers n1(100, 20);
+    Numbers n1(100, 2);
 
+    Numbers n2(100, 2);
+
+    cout << "n1: ";
     printNumbers(n1);
+    cout << "n2: ";
+    printNumbers(n2);
+
+    if (n1 > n2){
+        cout << "The numbers in n1 are greater than n2";
+    }
+    else if (n2 > n1){
+        cout << "The numbers in n2 are greater than n1";
+    }
+    else 
+        cout << "They are the same!";
+
+
     
 }
 

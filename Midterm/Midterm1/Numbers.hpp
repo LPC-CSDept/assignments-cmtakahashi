@@ -31,9 +31,23 @@ class Numbers{
         return NumofObjects;
     }
 
-   friend void printNumbers(Numbers n);
+    friend void printNumbers(Numbers n);
 
+    int operator>(const Numbers &n){
+        int nums1 = 0;
+        int nums2 = 0;
+        for (int i =0; i < values.size(); i++){
+            nums1+=values[i];
+        }
+        for (int i =0; i < n.values.size(); i++){
+            nums2+=n.values[i];
+        }
+        
+        return nums1 > nums2;
 
+        
+    };
+    
 
 };
 
