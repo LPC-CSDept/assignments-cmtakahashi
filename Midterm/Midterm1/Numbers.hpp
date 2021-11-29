@@ -1,3 +1,6 @@
+#ifndef NUMBERS_H
+#define NUMBERS_H
+
 #include <iostream>
 #include <vector>
 
@@ -60,3 +63,5 @@ void printNumbers(Numbers n){
     }
     cout << endl;
 }
+
+#endif
