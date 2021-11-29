@@ -15,3 +15,46 @@ Test your program correctly with various input data.
     To test the program easily, you may use a text file to input to Student objects.
 
 */
+#include "Students.hpp"
+#include <iostream>
+#include <fstream>
+
+int main(){
+
+    const int N =2;
+    Student s[N];
+    int id; 
+    string name;
+    double score[3];
+
+    for (int i =0; i < N; i++){
+        cout << "Enter ID: ";
+        cin >> id;
+        s[i].setSid(id);
+
+
+        cout << "Enter Student Name: ";
+        cin >> name;
+        s[i].setSname(name);
+        for (int j =0; j < 3; j++){
+            cout << "Enter score" << j+1 << ": ";
+            cin >> score[j];
+            s[i].setScores(i,j);
+        }
+        cout << "===================" << endl;
+        cout << "Student Information \n";
+        cout << "ID : " << s[i].getSid() << endl;
+        cout << "Name : " << s[i].getSname() << endl;
+        cout << "Total Score: " << s[i].getSum() << endl;
+
+    }
+   
+
+   
+ 
+
+
+}
+
+    
+

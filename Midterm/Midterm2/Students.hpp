@@ -26,9 +26,6 @@ class Student
     double getSum() const{
         return (score[0] + score[1] + score[2]);
     }
-    double getAvg() const{
-        return (score[0] + score[1] + score[2]) / 3;
-    }
     void setSid(int x) 
     {
         sid = x;
