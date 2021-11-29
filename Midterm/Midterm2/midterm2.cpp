@@ -20,7 +20,7 @@ Test your program correctly with various input data.
 
 int main(){
 
-    const int N =2;
+    const int N =10;
     Student s[N];
     int id; 
     string name;
