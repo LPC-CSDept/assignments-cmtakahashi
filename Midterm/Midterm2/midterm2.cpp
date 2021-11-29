@@ -17,7 +17,6 @@ Test your program correctly with various input data.
 */
 #include "Students.hpp"
 #include <iostream>
-#include <fstream>
 
 int main(){
 
@@ -26,6 +25,7 @@ int main(){
     int id; 
     string name;
     double score[3];
+    int target;
 
     for (int i =0; i < N; i++){
         cout << "Enter ID: ";
@@ -39,19 +39,32 @@ int main(){
         for (int j =0; j < 3; j++){
             cout << "Enter score" << j+1 << ": ";
             cin >> score[j];
-            s[i].setScores(i,j);
+            s[i].setScores(j,score[j]);
         }
-        cout << "===================" << endl;
-        cout << "Student Information \n";
-        cout << "ID : " << s[i].getSid() << endl;
-        cout << "Name : " << s[i].getSname() << endl;
-        cout << "Total Score: " << s[i].getSum() << endl;
-
     }
-   
+
+    bubbleSort(s, N);
+    cout << "After bubble sort: " << endl;
+    cout << "Here is your student information: " << endl;
+    printStudents(s, N);
+
+
+
+    cout << "Enter a target ID: ";
+    cin >> target;
+    int index = binarySearch(s, N, target);
+    if ( index == -1){
+		cout << "This student ID could not be found \n";
+    }
+	else{
+		cout << "The student ID found at index : " << index << endl;
+        cout << "Here is the student information: " << endl;
+        cout << s[index].getSid() << "\t" << s[index].getSname() << "\t" << s[index].getScores(0) <<  "\t" << s[index].getScores(2) << "\t" << s[index].getScores(2)<< endl;
+    }
+
+    return 0;
 
    
- 
 
 
 }
