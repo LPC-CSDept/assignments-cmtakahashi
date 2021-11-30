@@ -37,7 +37,7 @@ int main(){
         cin >> name;
         s[i].setSname(name);
         for (int j =0; j < 3; j++){
-            cout << "Enter score" << j+1 << ": ";
+            cout << "Enter score " << j+1 << ": ";
             cin >> score[j];
             s[i].setScores(j,score[j]);
         }

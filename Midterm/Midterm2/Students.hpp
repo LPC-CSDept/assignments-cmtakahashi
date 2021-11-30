@@ -87,7 +87,7 @@ int binarySearch(Student s[], int N, int target){
 }
 void printStudents(Student s[], int N){
     for (int i =0; i < N; i++){
-        cout << s[i].getSid() << "\t" << s[i].getSname() << "\t" << s[i].getScores(0) <<  "\t" << s[i].getScores(2) << "\t" << s[i].getScores(2)<< endl;
+        cout << s[i].getSid() << "\t" << s[i].getSname() << "\t" << s[i].getScores(0) <<  "\t" << s[i].getScores(1) << "\t" << s[i].getScores(2)<< endl;
     }
 }
 
