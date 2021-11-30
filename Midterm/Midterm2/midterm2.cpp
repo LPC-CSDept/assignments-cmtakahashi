@@ -59,7 +59,7 @@ int main(){
 	else{
 		cout << "The student ID found at index : " << index << endl;
         cout << "Here is the student information: " << endl;
-        cout << s[index].getSid() << "\t" << s[index].getSname() << "\t" << s[index].getScores(0) <<  "\t" << s[index].getScores(2) << "\t" << s[index].getScores(2)<< endl;
+        cout << s[index].getSid() << "\t" << s[index].getSname() << "\t" << s[index].getScores(0) <<  "\t" << s[index].getScores(1) << "\t" << s[index].getScores(2)<< endl;
     }
 
     return 0;
