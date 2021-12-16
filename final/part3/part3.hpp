@@ -29,6 +29,18 @@ class Employee{
         string getHireDate(){
             return hireDate;
         }
+
+        void setName(string n){
+            name = n;
+        }
+
+        void setNumber(int num){
+            number = num;
+        }
+
+        void setHireDate(string hDate){
+            hireDate = hDate;
+        }
 };
 
 class ProductionWorker: public Employee{
@@ -55,16 +67,34 @@ class ProductionWorker: public Employee{
             return pay;
         }
 
-        void printAllInfo(ProductionWorker w[], int N){
-            for(int i = 0; i < N; i++){
-                cout << w[i].getName();
-                cout << w[i].getNumber();
-                cout << w[i].getHireDate();
-                cout << w[i].getShift();
-                cout << w[i].getPay();
+        void setShift(int s){
+            shift = s;
+        }
+
+        void setPay(double p){
+            pay = p;
+        }
+
+        friend double getHighestPay(ProductionWorker w[], int N){
+            double highestPay = 0;
+            for (int i =0; i < N; i++){
+                if(w[i].getPay() > highestPay){
+                    highestPay = w[i].getPay();
+                }
             }
+            return highestPay;
 
         }
 
-
 };
+
+void printAllInfo(ProductionWorker w[], int N){
+    for(int i = 0; i < N; i++){
+        cout << w[i].getName() << "\t";
+        cout << w[i].getNumber() << "\t";
+        cout << w[i].getHireDate() << "\t";
+        cout << w[i].getShift() << "\t";
+        cout << w[i].getPay() << endl;
+    }
+
+}
