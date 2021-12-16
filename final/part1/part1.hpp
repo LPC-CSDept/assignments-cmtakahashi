@@ -10,12 +10,24 @@ class Course{
 
     public:
 
-       void setID();
-       void setName();
-       void setCredit();
+       void setID(int x){
+           ID = x;
+       };
+       void setName(string n){
+           name = n;
+       };
+       void setCredit(int c){
+           credit = c;
+       };
 
-       int getID();
-       string getName();
-       int getCredit();
+       int getID(){
+           return ID;
+       };
+       string getName(){
+           return name;
+       };
+       int getCredit(){
+           return credit;
+       };
 
 };
