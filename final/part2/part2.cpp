@@ -46,11 +46,13 @@ int main(){
     cout << endl << "List of Courses: " << endl;
     printCourseInfo(courses, N);
 
-    bubbleSort(courses, N);
+    quickSort(courses, 0, n-1);
+    
     cout << endl;
     cout << "Sorting courses by ID..." << endl;
     cout << "List of sorted courses: " << endl;
 
-    printCourseInfo(courses, N);    
+    printCourseInfo(courses, N);
+    
     
 }
