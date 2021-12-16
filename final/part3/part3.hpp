@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -85,8 +86,19 @@ class ProductionWorker: public Employee{
             return highestPay;
 
         }
+        friend bool operator > (ProductionWorker &w1, ProductionWorker &w2){
+            if(w1.getPay() > w2.getPay()){
+                return true;
+            }
+            else 
+                return false;
+        };
+        
 
+        
 };
+        
+
 
 void printAllInfo(ProductionWorker w[], int N){
     for(int i = 0; i < N; i++){
@@ -98,3 +110,22 @@ void printAllInfo(ProductionWorker w[], int N){
     }
 
 }
+
+void printRichestEmployee(ProductionWorker w[], int N){
+            double highestPay = 0;
+            int index =0;
+            for (int i =0; i < N; i++){
+                if(w[i].getPay() > highestPay){
+                    highestPay = w[i].getPay();
+                    index = i;
+                }
+            }
+            cout << "Here's the employee with the highest pay: " << endl;
+            cout << w[index].getName() << "\t";
+            cout << w[index].getNumber() << "\t";
+            cout << w[index].getHireDate() << "\t";
+            cout << w[index].getShift() << "\t";
+            cout << w[index].getPay() << endl;
+
+
+        }

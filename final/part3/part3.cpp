@@ -39,5 +39,18 @@ int main(){
 
     printAllInfo(workers, N);
 
-    cout << "The greatest salary among all workers is: " << getHighestPay(workers, N);
+    cout << endl << "The greatest salary among all workers is: $" << getHighestPay(workers, N) << endl << endl;
+    printRichestEmployee(workers, N);
+    cout << endl;
+
+    if (workers[0] > workers[1]){
+        cout << "The first worker has a higher salary";
+    }
+    else if (workers[1] > workers[0]){
+        cout << "The second worker has a higher salary";
+    }
+    else 
+        cout << "They are the same!";
+
+
 }
