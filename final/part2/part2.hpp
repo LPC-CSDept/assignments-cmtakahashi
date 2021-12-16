@@ -86,7 +86,30 @@ int binarySearch(Course c[], int N, int target){
         return mid;
 }
 
+void quickSort(Course *courses, int left, int right){
+    int i, j, v, temp;
+    if (right - left > 0){
+        v = courses[right].getID();
+        i = left -1;
+        j = right+1;
 
+        Course currentCourse = courses[(left + right)/2];
+
+        while (i < j){
+            while(courses[++i].getID() < currentCourse.getID());
+            while(courses[--j].getID() > currentCourse.getID());
+
+            if (i >= j) break;
+
+            Course temp = courses[i];
+            courses[i] = courses[j];
+            courses[j] = temp;
+        }
+
+        quickSort(courses, left, i-1);
+        quickSort(courses, i+1, right);
+    }
+}
 
 
 
