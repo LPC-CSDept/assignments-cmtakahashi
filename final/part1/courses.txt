@@ -1,0 +1,10 @@
+1 Chemistry 10
+8 Biology 10
+2 Algebra 8
+6 Calculus 8
+5 Physics 10
+4 Botany 5
+9 Geology 5
+10 English 5
+3 Japanese 7
+7 Korean 7
