@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 
+using namespace std;
+
 
 int main(){
      // test data from file 
@@ -21,6 +23,7 @@ int main(){
     int credit;
     Course courses[N];
     int n = 0;
+    int target;
 
     while (!data_file.eof() && n<N){
         data_file >> ID;
@@ -43,5 +46,27 @@ int main(){
     cout << endl << "List of Courses: " << endl;
     printCourseInfo(courses, N);
 
+    bubbleSort(courses, N);
+    cout << endl;
+    cout << "Sorting courses by ID..." << endl;
+    cout << "List of sorted courses: " << endl;
 
+    printCourseInfo(courses, N);
+
+    cout << "Starting search engine...." << endl;
+    cout << "Enter a target ID: ";
+    cin >> target; 
+    int index = binarySearch(courses, N, target);
+
+    if (index == -1){
+        cout << "No course found with this ID" << endl;
+    }
+    else{
+        cout << "The ID found at index: " << index << endl;
+        cout << "Here is the course information" << endl << endl;
+        cout << "===========================================" << endl;
+        cout << courses[index].getID() << "\t" << courses[index].getName() << "\t" << courses[index].getCredit() << endl;
+    }
+    
+    
 }

@@ -1,3 +1,5 @@
+#ifndef PART1_H
+#define PART1_H
 #include <iostream>
 
 using namespace std;
@@ -32,6 +34,16 @@ class Course{
 
 };
 
+void bubbleSort (Course c[], int N){
+    for (int i=0; i < N; i++){
+        for (int j =0; j < N; j++){
+            if (c[i].getID() < c[j].getID()){
+                swap(c[j], c[i]);
+            }
+        }
+    }
+}
+
 void printCourseInfo(Course c[], int N){
     cout << endl;
     cout << "ID\t" << "Couse\t" << "Credits\t"  << endl;
@@ -43,11 +55,38 @@ void printCourseInfo(Course c[], int N){
     }
 }
 
-void bubbleSort (Course c[], int N){
-    for (int i=0; i < N; i++){
-        for (int j =0; j < N; j++){}
-            if (c[i].getID() > c[j].getID(){
-                swap(c[i], c[j]);
-            }
+
+int binarySearch(Course c[], int N, int target){
+    int first, last, mid;
+    bool found = false;
+    first = 0;
+    last = N-1;
+    mid = (first+last/2);
+
+    while (first <= last){
+        
+        mid = (first+last)/2;
+
+        if (c[mid].getID() == target){
+            found = true;
+            return mid;
+        }
+
+        else if(c[mid].getID() < target){
+            first = mid + 1;
+        }
+
+        else {
+            last = mid-1;
+        }
     }
+    if (!found)
+        return -1;
+    else  
+        return mid;
 }
+
+
+
+
+#endif
