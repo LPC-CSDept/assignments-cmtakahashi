@@ -37,7 +37,10 @@ int main(){
     }
 
     data_file.close();
-
+    
+    //print the initial course info to confirm correct processing
+    cout << endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+    cout << endl << "List of Courses: " << endl;
     printCourseInfo(courses, N);
 
 

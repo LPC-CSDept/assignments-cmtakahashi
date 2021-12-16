@@ -42,3 +42,12 @@ void printCourseInfo(Course c[], int N){
         
     }
 }
+
+void bubbleSort (Course c[], int N){
+    for (int i=0; i < N; i++){
+        for (int j =0; j < N; j++){}
+            if (c[i].getID() > c[j].getID(){
+                swap(c[i], c[j]);
+            }
+    }
+}
